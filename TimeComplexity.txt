@@ -1,0 +1,43 @@
+Note:
+    O(n) is worst case time complexity
+
+Reference
+    #1 https://wiki.python.org/moin/TimeComplexity
+
+Task0.py : O(n) = 1
+    Constant execution
+
+Task1.py : O(n) =  n
+    #Step 1: Jon the telephone numbers across calls and text O(n) = 2n
+    #Printing by convering to set to elimindate duplicates O(n) = n [Assuming conversion of list to hashset is linear]
+    Total Time complexity : 2n + n
+
+Task2.py : O(n) = n
+    Step 1: Form a Dict with incoming+outgoing calls per number with sum of total time O(n) = n
+    Step 2: Find the max based on the talk time O(n) = n
+    Total time complexity :  2n
+
+Task3.py : O(n) = nlogn
+    Step 1: Part A Implementation [O(n) = n]
+    Step 2: Part A Soring - Sort [O(n) = nlogn]
+    Step 3: Part A - Remove Duplicate [O(n) = n]
+    Step 4: Part A - Printing [O(n) = n]
+    Step 5 - printing Part B [O(n) = 1]
+    TTotal time complexity : 3n+nlogn+1
+
+
+Task4.py : O(n) = nlogn
+        Step 1: Fetch the columns for both calls and text O(n) = 8n
+                Per call O(n) = fetchcols = n + list to set is assumed to be n
+                Per call O(n) = 2n
+                Total O(n) = 4 * 2n
+
+        Step 2 : Union the destcalls, dest and src text sets  O(n) = 2n
+            Per Union O(n) = n [reference#1]
+            Total O(n) = 2 * n
+        Step 3: Use set differnece update to remove the items in callsrc that are available in the compareset
+            O(n) = n [refence#1]
+        Step 4: Lexographical Sorting : O(n) = nlogn
+        Step 5: Print O(n) = n
+        Total time complexity : 11n + nlogn
+
